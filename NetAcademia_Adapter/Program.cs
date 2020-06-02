@@ -14,7 +14,7 @@ namespace NetAcademia_Adapter
     {
         static void Main(string[] args)
         {
-            var adapter = new AdapterExample();
+            var adapter = new AdapterExample(new AddressRepository(), new MessageService());
             adapter.Start();
         }
     }

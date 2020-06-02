@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NetAcademia_Adapter
 {
-    public class MessageService
+    public class MessageService : IMessageService
     {
         //Ne hasznalj null-t, null object pattern
         private List<Message> messages = new List<Message>();

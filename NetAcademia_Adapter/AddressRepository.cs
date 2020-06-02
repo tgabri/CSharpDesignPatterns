@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NetAcademia_Adapter
 {
-    public class AddressRepository
+    public class AddressRepository : IAddressRepository
     {
         public AddressRepository()
         {
