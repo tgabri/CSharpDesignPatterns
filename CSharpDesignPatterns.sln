@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Adapter", "NetAcademia_Adapter\NetAcademia_Adapter.csproj", "{F87217BF-426E-4069-A46F-BDD8B39AD9A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netacademia_Adapter.Tests", "Netacademia_Adapter.Tests\Netacademia_Adapter.Tests.csproj", "{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{F87217BF-426E-4069-A46F-BDD8B39AD9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87217BF-426E-4069-A46F-BDD8B39AD9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F87217BF-426E-4069-A46F-BDD8B39AD9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
