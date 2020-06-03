@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Adapter", "NetA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netacademia_Adapter.Tests", "Netacademia_Adapter.Tests\Netacademia_Adapter.Tests.csproj", "{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00Data", "00Data\00Data.csproj", "{0819C80D-2788-4D61-A089-32E2A3C861C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Strategy", "NetAcademia_Strategy\NetAcademia_Strategy.csproj", "{BB082E13-0B3B-4A38-80DE-034557F03A05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,14 @@ Global
 		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D61AB44C-4A79-4090-ABD3-3B589EBF0AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819C80D-2788-4D61-A089-32E2A3C861C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0819C80D-2788-4D61-A089-32E2A3C861C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0819C80D-2788-4D61-A089-32E2A3C861C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0819C80D-2788-4D61-A089-32E2A3C861C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB082E13-0B3B-4A38-80DE-034557F03A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB082E13-0B3B-4A38-80DE-034557F03A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB082E13-0B3B-4A38-80DE-034557F03A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB082E13-0B3B-4A38-80DE-034557F03A05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

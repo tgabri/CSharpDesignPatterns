@@ -9,7 +9,7 @@ namespace Netacademia_Adapter.Tests
     public class AdapterExampleTests
     {
         [TestMethod]
-        public void ShouldAdapterExampleThrowArgumentNullExceptionIfArgumentsNull()
+        public void ShouldAdapterExampleThrowArgumentNullExceptionIfAllArgumentsNull()
         {
             AdapterExample sut;
 

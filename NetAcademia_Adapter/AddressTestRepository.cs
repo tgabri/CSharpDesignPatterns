@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetAcademia_Adapter.Resource;
+using System;
 using System.Collections.Generic;
 
 namespace NetAcademia_Adapter
@@ -11,7 +12,7 @@ namespace NetAcademia_Adapter
 
         public IList<Address> GetAddresses()
         {
-            return new List<Address> { new Address { Email = "test@gmail.com" } };
+            return new List<Address> { new Address { Email = GlobalStrings.TestEmailAddress } };
         }
     }
 }
