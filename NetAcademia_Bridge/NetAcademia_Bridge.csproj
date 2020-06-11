@@ -46,6 +46,9 @@
     <Compile Include="EmailAddress.cs" />
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailService.cs" />
+    <Compile Include="EmailServiceWithExchange.cs" />
+    <Compile Include="EmailServiceWithMandrill.cs" />
+    <Compile Include="EmailServiceWithSenderGrid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

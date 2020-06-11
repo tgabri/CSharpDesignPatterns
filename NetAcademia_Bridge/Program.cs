@@ -20,8 +20,27 @@ namespace NetAcademia_Bridge
             };
 
             var service = new EmailService();
-
             service.Send(message);
+            Console.WriteLine();
+
+            var serviceExch = new EmailServiceWithExchange();
+            serviceExch.Host = "1.1.1.1";
+            serviceExch.Username = "TestUser";
+            serviceExch.Password = "pswrd123";
+            serviceExch.Send(message);
+            Console.WriteLine();
+
+            var serviceSG = new EmailServiceWithSenderGrid();
+            serviceSG.HostUrl = "https://sendgrid.service.com";
+            serviceSG.ApiKey = "SG_APIKEY";
+            serviceSG.Send(message);
+            Console.WriteLine();
+
+            var serviceMandrill = new EmailServiceWithMandrill();
+            serviceMandrill.HostUrl = "https://mandrill.service.com";
+            serviceMandrill.ClientSecret = "MANDRILL-SECRET";
+            serviceMandrill.ClientKey = "MANDRILL-KEY";
+            serviceMandrill.Send(message);
 
             Console.ReadLine();
         }
