@@ -48,6 +48,25 @@ namespace NetAcademia_Strategy
             var service3 = new DataService(new AddressStrategyTestRepo(), new AvgStrategy());
             Console.WriteLine($"Email-ek atlagos szama: {service3.ReportWithStrategy()}");
 
+            Console.WriteLine();
+
+            ////////////////////////////////////////////////////////////////////////////////
+            ///                         .NET megoldasa                                   ///
+            ////////////////////////////////////////////////////////////////////////////////
+            //delegate
+
+            Console.WriteLine("Delegate-s megoldas");
+            Console.WriteLine("Email-ek szama: {0}", service.ReportWithDelegate((list) =>
+            {
+                var sum = 0;
+                foreach (var address in list)
+                {
+                    sum += address.EmailCount;
+                }
+                return sum;
+            }));
+            Console.WriteLine($"Email-ek atlagos szama: {service.ReportWithDelegate(list => (int)list.Average(x => x.EmailCount))}");
+
 
 
             #endregion JO megoldas

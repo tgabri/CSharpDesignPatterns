@@ -1,5 +1,6 @@
 ﻿using NetAcademia_Adapter;
 using System;
+using System.Collections.Generic;
 
 namespace NetAcademia_Strategy
 {
@@ -60,6 +61,13 @@ namespace NetAcademia_Strategy
         {
             var list = repository.GetAddresses();
             return strategy.Operation(list);
+        }
+
+        public int ReportWithDelegate(Func<IList<Address>, int> strategy)
+        {
+            if (strategy == null) throw new ArgumentNullException(nameof(strategy));
+
+            return strategy(repository.GetAddresses());
         }
     }
 
