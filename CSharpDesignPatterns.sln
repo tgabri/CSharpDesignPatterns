@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Observer3", "Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Bridge", "NetAcademia_Bridge\NetAcademia_Bridge.csproj", "{9F5EA33D-7CAB-444C-A072-4BAC5B205F8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAcademia_Bridge2", "NetAcademia_Bridge2\NetAcademia_Bridge2.csproj", "{0D5098AB-4DA3-497B-8C00-40B42D3071FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{9F5EA33D-7CAB-444C-A072-4BAC5B205F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F5EA33D-7CAB-444C-A072-4BAC5B205F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F5EA33D-7CAB-444C-A072-4BAC5B205F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5098AB-4DA3-497B-8C00-40B42D3071FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5098AB-4DA3-497B-8C00-40B42D3071FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5098AB-4DA3-497B-8C00-40B42D3071FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5098AB-4DA3-497B-8C00-40B42D3071FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
