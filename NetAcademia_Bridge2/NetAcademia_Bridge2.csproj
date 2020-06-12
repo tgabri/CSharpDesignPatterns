@@ -46,7 +46,10 @@
     <Compile Include="EmailAddress.cs" />
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailService.cs" />
+    <Compile Include="EmailServiceWithLogger.cs" />
     <Compile Include="ISendWith.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonRepository.cs" />
     <Compile Include="SendWithExchange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

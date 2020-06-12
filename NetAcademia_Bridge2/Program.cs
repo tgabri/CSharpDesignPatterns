@@ -10,6 +10,36 @@ namespace NetAcademia_Bridge2
     {
         static void Main(string[] args)
         {
+            //A hid minta bevezetesehez es tesztjehez
+            //TestBridge();
+
+            var officeAddress = new EmailAddress { Address = "iroda@gmail.com", Display = "Irodai email" };
+
+            //Elore tudom h hidat akarok hasznalni
+            //Levalasztom a konkret megvalositast a hasznalattol, ez az adatok tarolasanal a repository minta
+            var repo = new PersonRepository();
+
+            var person = repo.GetBirthdayPeople();
+
+            var sendWith = new SendWith();
+            var service = new EmailService(sendWith);
+            var serviceWithLogger = new EmailServiceWithLogger(service, sendWith);
+
+            var message = new EmailMessage
+            {
+                From = officeAddress,
+                To = person.EmailAddress,
+                Subject = "Udvozlet",
+                Message = "Boldog Szuletesnapot..."
+            };
+
+            serviceWithLogger.Send(message);
+
+            Console.ReadLine();
+        }
+
+        private static void TestBridge()
+        {
             var message = new EmailMessage
             {
                 From = new EmailAddress { Address = "sender@email.com", Display = "Az elso cim" },
@@ -48,12 +78,6 @@ namespace NetAcademia_Bridge2
             service = new EmailService(strategyMandrill);
             strategyMandrill.Send(message);
             Console.WriteLine();
-
-
-
-
-
-            Console.ReadLine();
         }
     }
 }
