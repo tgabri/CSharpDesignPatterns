@@ -4,9 +4,9 @@ namespace NetAcademia_Bridge2
 {
     public class EmailService
     {
-        private ISendWith strategy;
+        private AbstractSendWith strategy;
 
-        public EmailService(ISendWith strategy)
+        public EmailService(AbstractSendWith strategy)
         {
             this.strategy = strategy;
         }

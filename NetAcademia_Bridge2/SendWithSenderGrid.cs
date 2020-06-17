@@ -2,12 +2,12 @@
 
 namespace NetAcademia_Bridge2
 {
-    public class SendWithSenderGrid : ISendWith
+    public class SendWithSenderGrid : AbstractSendWith
     {
         public string HostUrl { get; internal set; }
         public string ApiKey { get; internal set; }
 
-        public void Send(EmailMessage message)
+        public override void Send(EmailMessage message)
         {
             Console.WriteLine("ApiKey: {0}", ApiKey);
             Console.WriteLine("HostUrl: {0}", HostUrl);
@@ -16,6 +16,12 @@ namespace NetAcademia_Bridge2
             Console.WriteLine("Subject: {0}", message.Subject);
             Console.WriteLine("Uzenet: {0}", message.Message);
             Console.WriteLine("Uzenet elkuldve az SendGrid service-bol API-val!");
+        }
+
+        protected override void Setup()
+        {
+            HostUrl = "https://sendgrid.service.com";
+            ApiKey = "SG_APIKEY";
         }
     }
 }

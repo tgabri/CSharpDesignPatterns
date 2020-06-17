@@ -11,8 +11,15 @@ namespace NetAcademia_Bridge2
         static void Main(string[] args)
         {
             //A hid minta bevezetesehez es tesztjehez
-            //TestBridge();
+            TestBridge();
 
+            //TestBridgeDecoratorAndProxy();
+
+            Console.ReadLine();
+        }
+
+        private static void TestBridgeDecoratorAndProxy()
+        {
             var officeAddress = new EmailAddress { Address = "iroda@gmail.com", Display = "Irodai email" };
 
             //Elore tudom h hidat akarok hasznalni
@@ -20,10 +27,16 @@ namespace NetAcademia_Bridge2
             var repo = new PersonRepository();
 
             var person = repo.GetBirthdayPeople();
-
-            var sendWith = new SendWith();
+            var sendWith = AbstractSendWith.Factory<SendWith>();
             var service = new EmailService(sendWith);
+
+            //Decorator minta
             var serviceWithLogger = new EmailServiceWithLogger(service, sendWith);
+            //EmailService serviceWithLogger = new EmailServiceWithLogger(service, sendWith);
+
+
+            //PROXY minta: ha a proxy osztaly feluletenek a hasznalatat ki lehet kenyszeriteni
+            var serviceProxy = new EmailServiceProxy(service, sendWith);
 
             var message = new EmailMessage
             {
@@ -34,8 +47,6 @@ namespace NetAcademia_Bridge2
             };
 
             serviceWithLogger.Send(message);
-
-            Console.ReadLine();
         }
 
         private static void TestBridge()
@@ -49,35 +60,29 @@ namespace NetAcademia_Bridge2
             };
 
             //Implementor
-            var strategy = new SendWith();
+            var strategy = AbstractSendWith.Factory<SendWith>();
 
             //Abstraction
             var service = new EmailService(strategy);
             service.Send(message);
             Console.WriteLine();
 
-            var strategyExch = new SendWithExchange();
-            strategyExch.Host = "1.1.1.1";
-            strategyExch.Username = "TestUser";
-            strategyExch.Password = "pswrd123";
+            var strategyExch = AbstractSendWith.Factory<SendWithExchange>();
             service = new EmailService(strategyExch);
             strategyExch.Send(message);
             Console.WriteLine();
 
-            var strategySG = new SendWithSenderGrid();
-            strategySG.HostUrl = "https://sendgrid.service.com";
-            strategySG.ApiKey = "SG_APIKEY";
+            var strategySG = AbstractSendWith.Factory<SendWithSenderGrid>();
             service = new EmailService(strategySG);
             strategySG.Send(message);
             Console.WriteLine();
 
-            var strategyMandrill = new SendWithMandrill();
-            strategyMandrill.HostUrl = "https://mandrill.service.com";
-            strategyMandrill.ClientSecret = "MANDRILL-SECRET";
-            strategyMandrill.ClientKey = "MANDRILL-KEY";
+            var strategyMandrill = AbstractSendWith.Factory<SendWithMandrill>();
             service = new EmailService(strategyMandrill);
             strategyMandrill.Send(message);
             Console.WriteLine();
         }
+
+
     }
 }

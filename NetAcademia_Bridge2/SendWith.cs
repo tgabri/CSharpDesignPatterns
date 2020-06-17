@@ -2,9 +2,9 @@
 
 namespace NetAcademia_Bridge2
 {
-    public class SendWith : ISendWith
+    public class SendWith : AbstractSendWith
     {
-        public void Send(EmailMessage message)
+        public override void Send(EmailMessage message)
         {
             //Console.WriteLine("ApiKey: {0}", ApiKey);
             //Console.WriteLine("HostUrl: {0}", HostUrl);
@@ -13,6 +13,10 @@ namespace NetAcademia_Bridge2
             Console.WriteLine("Subject: {0}", message.Subject);
             Console.WriteLine("Uzenet: {0}", message.Message);
             Console.WriteLine("Uzenet elkuldve az teszt service-bol!");
+        }
+
+        protected override void Setup()
+        {
         }
     }
 }

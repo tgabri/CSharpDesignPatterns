@@ -29,43 +29,39 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="NetAcademia_Bridge2.SendWith" BaseTypeListCollapsed="true">
-    <Position X="6.5" Y="2" Width="1.5" />
+    <Position X="6.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SendWith.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NetAcademia_Bridge2.SendWithExchange" BaseTypeListCollapsed="true">
-    <Position X="11.75" Y="2" Width="1.5" />
+    <Position X="11.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAUAAAAAAAAAACAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAUAAAAAAAAAACAACAAAAAAAAAAA=</HashCode>
       <FileName>SendWithExchange.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NetAcademia_Bridge2.SendWithMandrill" BaseTypeListCollapsed="true">
-    <Position X="8.25" Y="2" Width="1.5" />
+    <Position X="8.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAABAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAADAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SendWithMandrill.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="NetAcademia_Bridge2.SendWithSenderGrid" BaseTypeListCollapsed="true">
-    <Position X="10" Y="2" Width="1.5" />
+    <Position X="10" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAACAAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SendWithSenderGrid.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="NetAcademia_Bridge2.ISendWith">
+  <Class Name="NetAcademia_Bridge2.AbstractSendWith">
     <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ISendWith.cs</FileName>
+      <HashCode>AAAAAAAACAAAAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AbstractSendWith.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
