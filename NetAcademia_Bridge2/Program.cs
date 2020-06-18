@@ -28,12 +28,28 @@ namespace NetAcademia_Bridge2
             //Console.WriteLine();
             //TestBridgeDecoratorAndProxy();
 
-            var send = AbstractSendWith.Factory<SendWithExchange>();
-            var service = new EmailService(send);
-            var repo = kernel.Get<IPersonRepository>();
-            var template = new Templating();
 
-            var msgService = new MessageService(service, repo, template);
+
+            //var send = AbstractSendWith.Factory<SendWithExchange>();
+            //var service = new EmailService(send);
+            //var repo = kernel.Get<IPersonRepository>();
+            //var template = new Templating();
+
+            //var msgService = new MessageService(service, repo, template);
+            //msgService.Run();
+
+
+            //Letrehozasok becsomagaolasa  egy specialis strategiaba
+            var birthdayMessageFactoryWithExchange = new BirthdayMessageFactoryWithExchange();
+            var msgService = new MessageService(birthdayMessageFactoryWithExchange);
+
+            msgService.Run();
+
+            Console.WriteLine();
+
+            var welcomeMessageFactoryWithSendGrid = new WelcomeMessageFactoryWithSendGrid();
+            msgService = new MessageService(welcomeMessageFactoryWithSendGrid);
+
             msgService.Run();
 
             Console.ReadLine();

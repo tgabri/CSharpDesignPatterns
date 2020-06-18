@@ -6,20 +6,32 @@ namespace NetAcademia_Bridge2
     {
         private EmailService service;
         private IPersonRepository repo;
-        private Templating template;
+        private AbstractTemplating template;
+        private AbstractMessageFactory messageFactory;
 
-        public MessageService(EmailService service, IPersonRepository repo, Templating template)
+        public MessageService(AbstractMessageFactory messageFactory)
         {
-            this.service = service;
-            this.repo = repo;
-            this.template = template;
+            this.service = messageFactory.EmailServiceFactory();
+            this.repo = messageFactory.RepoFactory();
+            this.template = messageFactory.TemplateFactory();
         }
+
+        //public MessageService(EmailService service, IPersonRepository repo, Templating template)
+        //{
+        //    this.service = service;
+        //    this.repo = repo;
+        //    this.template = template;
+        //}
 
         public void Run()
         {
-            var person = repo.GetBirthdayPeople();
-            var message = template.GetMessageFor(person);
-            service.Send(message);
+            var people = repo.GetPeopleToSendMessageTo();
+            foreach (var person in people)
+            {
+                var message = template.GetMessageFor(person);
+                service.Send(message);
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace NetAcademia_Bridge2
+﻿namespace NetAcademia_Bridge2
 {
-    public class Templating
+    public abstract class AbstractTemplating
     {
         public EmailMessage GetMessageFor(Person person)
         {
@@ -15,14 +13,8 @@ namespace NetAcademia_Bridge2
             return EmailMessage.Factory(from, to, subject, message);
         }
 
-        private string GetMessage(Person person)
-        {
-            return $"Kedves {person.Name}! A ceg neveben szeretnenk Boldog Szuletesnapot kivanni!";
-        }
+        protected abstract string GetMessage(Person person);
 
-        private string GetSubject(Person person)
-        {
-            return "Szuletesnapi udvozlet";
-        }
+        protected abstract string GetSubject(Person person);
     }
 }

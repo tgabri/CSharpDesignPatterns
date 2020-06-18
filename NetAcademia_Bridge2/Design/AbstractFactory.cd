@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetAcademia_Bridge2.AbstractMessageFactory">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>AbstractMessageFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetAcademia_Bridge2.BirthdayMessageFactoryWithExchange">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAI=</HashCode>
+      <FileName>BirthdayMessageFactoryWithExchange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetAcademia_Bridge2.WelcomeMessageFactoryWithSendGrid">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAI=</HashCode>
+      <FileName>WelcomeMessageFactoryWithSendGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetAcademia_Bridge2.MessageService">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAEAAAIAAAAAAAAAAEAAAAAAAAI=</HashCode>
+      <FileName>MessageService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="messageFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
