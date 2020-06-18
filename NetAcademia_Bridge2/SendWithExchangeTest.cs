@@ -4,10 +4,6 @@ namespace NetAcademia_Bridge2
 {
     public class SendWithExchangeTest : SendWithExchange
     {
-        public string Host { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-
         public override void Send(EmailMessage message)
         {
             Console.WriteLine("Host: {0}, Username: {1}", Host, Username);

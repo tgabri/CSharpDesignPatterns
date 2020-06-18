@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace NetAcademia_Bridge2
 {
-    public class PersonRepository
+    public class PersonRepositoryTestData : IPersonRepository
     {
         List<Person> data = new List<Person>();
-        public PersonRepository()
+        public PersonRepositoryTestData()
         {
             data.Add(
                 new Person

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -9,12 +10,22 @@ namespace NetAcademia_Bridge2
 {
     class Program
     {
+        private static StandardKernel kernel;
+
         static void Main(string[] args)
         {
             //A hid minta bevezetesehez es tesztjehez
             TestBridge();
+            //Ninject felparameterezese
+            kernel = new StandardKernel();
+            kernel.Bind<IPersonRepository>()
+                //.To<PersonRepositoryTestData>()
+                .To<PersonRepositorySimpleData>()
+                .InSingletonScope();
 
-            //TestBridgeDecoratorAndProxy();
+            Console.WriteLine("TestBridgeDecoratorAndProxy");
+            Console.WriteLine();
+            TestBridgeDecoratorAndProxy();
 
             Console.ReadLine();
         }
@@ -25,7 +36,10 @@ namespace NetAcademia_Bridge2
 
             //Elore tudom h hidat akarok hasznalni
             //Levalasztom a konkret megvalositast a hasznalattol, ez az adatok tarolasanal a repository minta
-            var repo = new PersonRepository();
+            //E helyett hasznalhatunk ninject dependency injection-t
+            // var repo = new PersonRepository();
+            //Ninject megoldas:
+            var repo = kernel.Get<IPersonRepository>();
 
             var person = repo.GetBirthdayPeople();
             var sendWith = AbstractSendWith.Factory<SendWith>();
