@@ -16,5 +16,16 @@ namespace NetAcademia_Bridge2
                 EmailAddress = new EmailAddress { Address = "fostos@gmail.com", Display = "Ceges email" }
             };
         }
+
+        public List<Person> GetPeopleToSendMessageTo()
+        {
+            return new List<Person>(new Person[] {
+            new Person
+            {
+                Name = "Fosos Toni",
+                EmailAddress = new EmailAddress { Address = "fostos@gmail.com", Display = "Ceges email" }
+            }
+            });
+        }
     }
 }

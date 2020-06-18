@@ -37,5 +37,10 @@ namespace NetAcademia_Bridge2
         {
             throw new NotImplementedException();
         }
+
+        public List<Person> GetPeopleToSendMessageTo()
+        {
+            return data;
+        }
     }
 }

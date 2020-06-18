@@ -15,7 +15,8 @@ namespace NetAcademia_Bridge2
         static void Main(string[] args)
         {
             //A hid minta bevezetesehez es tesztjehez
-            TestBridge();
+            // TestBridge();
+
             //Ninject felparameterezese
             kernel = new StandardKernel();
             kernel.Bind<IPersonRepository>()
@@ -23,16 +24,24 @@ namespace NetAcademia_Bridge2
                 .To<PersonRepositorySimpleData>()
                 .InSingletonScope();
 
-            Console.WriteLine("TestBridgeDecoratorAndProxy");
-            Console.WriteLine();
-            TestBridgeDecoratorAndProxy();
+            //Console.WriteLine("TestBridgeDecoratorAndProxy");
+            //Console.WriteLine();
+            //TestBridgeDecoratorAndProxy();
+
+            var send = AbstractSendWith.Factory<SendWithExchange>();
+            var service = new EmailService(send);
+            var repo = kernel.Get<IPersonRepository>();
+            var template = new Templating();
+
+            var msgService = new MessageService(service, repo, template);
+            msgService.Run();
 
             Console.ReadLine();
         }
 
         private static void TestBridgeDecoratorAndProxy()
         {
-            var officeAddress = EmailAddressFactory.GetNewAddress(address: "iroda@gmail.com", display: "Irodai email");
+            var officeAddress = EmailAddressFactory.GetOfficeAddress();
 
             //Elore tudom h hidat akarok hasznalni
             //Levalasztom a konkret megvalositast a hasznalattol, ez az adatok tarolasanal a repository minta

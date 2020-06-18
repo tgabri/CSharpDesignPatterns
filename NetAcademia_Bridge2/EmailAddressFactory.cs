@@ -8,5 +8,10 @@ namespace NetAcademia_Bridge2
         {
             return new EmailAddress { Address = address, Display = display };
         }
+
+        public static EmailAddress GetOfficeAddress()
+        {
+            return GetNewAddress(address: "iroda@gmail.com", display: "Irodai email");
+        }
     }
 }
