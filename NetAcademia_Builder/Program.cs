@@ -16,17 +16,15 @@ namespace NetAcademia_Builder
     {
         static void Main(string[] args)
         {
-            var computer = new Computer();
-            computer.Processor = Processor.x64;
-            computer.OS = OS.Windows10;
-            computer.HDD = 120;
-            computer.HasDVD = true;
-            computer.HasSoundCard = true;
-            computer.HasUSB = true;
-            computer.Applications = new List<string>() { "MSSQL", "VisualStudio", "VLC Player" };
+            var builder = new PCBuilder();
+            builder.CreatePC();
+            builder.BuildPC();
+            var computer = builder.GetPC();
+
             computer.Display();
 
             Console.ReadLine();
         }
+
     }
 }
