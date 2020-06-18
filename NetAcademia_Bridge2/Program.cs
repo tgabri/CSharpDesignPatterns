@@ -72,7 +72,7 @@ namespace NetAcademia_Bridge2
             strategyExch.Send(message);
             Console.WriteLine();
 
-            var strategySG = AbstractSendWith.Factory<SendWithSenderGrid>();
+            var strategySG = AbstractSendWith.Factory<SendWithSendGrid>();
             service = new EmailService(strategySG);
             strategySG.Send(message);
             Console.WriteLine();

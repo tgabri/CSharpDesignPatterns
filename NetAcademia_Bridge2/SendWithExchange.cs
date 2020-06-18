@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 
 namespace NetAcademia_Bridge2
 {
@@ -20,9 +21,9 @@ namespace NetAcademia_Bridge2
 
         protected override void Setup()
         {
-            Host = "1.1.1.1";
-            Username = "TestUser";
-            Password = "pswrd123";
+            Host = ConfigurationManager.AppSettings[MagicValues.AppSettingsMsxHost];
+            Username = ConfigurationManager.AppSettings[MagicValues.AppSettingsMsxUsername];
+            Password = ConfigurationManager.AppSettings[MagicValues.AppSettingsMsxPassword];
         }
     }
 }

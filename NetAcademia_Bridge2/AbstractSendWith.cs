@@ -15,10 +15,15 @@ namespace NetAcademia_Bridge2
         public static T Factory<T>()
             where T : AbstractSendWith, new()
         {
-            var tmp = new T();
-            tmp.Setup();
-
-            return tmp;
+            //var tmp = new T();
+            //tmp.Setup();
+#if DEBUG
+            if (typeof(T) == typeof(SendWithExchange))
+            {
+                return new SendWithExchangeTest() as T;
+            }
+#endif
+            return new T();
         }
 
         //Nem generikus megoldas
