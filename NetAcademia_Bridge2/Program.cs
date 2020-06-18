@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace NetAcademia_Bridge2
 
         private static void TestBridgeDecoratorAndProxy()
         {
-            var officeAddress = new EmailAddress { Address = "iroda@gmail.com", Display = "Irodai email" };
+            var officeAddress = EmailAddressFactory.GetNewAddress(address: "iroda@gmail.com", display: "Irodai email");
 
             //Elore tudom h hidat akarok hasznalni
             //Levalasztom a konkret megvalositast a hasznalattol, ez az adatok tarolasanal a repository minta
@@ -38,26 +39,19 @@ namespace NetAcademia_Bridge2
             //PROXY minta: ha a proxy osztaly feluletenek a hasznalatat ki lehet kenyszeriteni
             var serviceProxy = new EmailServiceProxy(service, sendWith);
 
-            var message = new EmailMessage
-            {
-                From = officeAddress,
-                To = person.EmailAddress,
-                Subject = "Udvozlet",
-                Message = "Boldog Szuletesnapot..."
-            };
+            var message = EmailMessage.Factory(officeAddress, person.EmailAddress, "Udvozlet", "Boldog Szuletesnapot...");
 
             serviceWithLogger.Send(message);
         }
 
         private static void TestBridge()
         {
-            var message = new EmailMessage
-            {
-                From = new EmailAddress { Address = "sender@email.com", Display = "Az elso cim" },
-                To = new EmailAddress { Address = "test@email.com", Display = "A masodik cim" },
-                Subject = "Test Subject",
-                Message = "Ez egy teszt uzenet..."
-            };
+            EmailMessage message = EmailMessage.Factory(
+                from: EmailAddressFactory.GetNewAddress(address: "sender@email.com", display: "Az elso cim"),
+                to: EmailAddressFactory.GetNewAddress("test@email.com", "A masodik cim"),
+                subject: "Test Subject",
+                message: "Ez egy teszt uzenet...");
+
 
             //Implementor
             var strategy = AbstractSendWith.Factory<SendWith>();

@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmailAddress.cs" />
+    <Compile Include="EmailAddressFactory.cs" />
     <Compile Include="EmailMessage.cs" />
     <Compile Include="EmailService.cs" />
     <Compile Include="EmailServiceProxy.cs" />
