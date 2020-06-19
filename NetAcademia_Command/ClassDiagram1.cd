@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetAcademia_Command.ModositasParancs">
+    <Position X="3.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAEAAIAAAAAAA=</HashCode>
+      <FileName>ModositasParancs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NetAcademia_Command.ParancsFeldolgozo">
+    <Position X="8.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>ParancsFeldolgozo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="parancsLista" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="NetAcademia_Command.TorlesParancs">
+    <Position X="6" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAEAAIAAAAAAA=</HashCode>
+      <FileName>TorlesParancs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NetAcademia_Command.UjParancs">
+    <Position X="1.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>UjParancs.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="NetAcademia_Command.IParancs">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>IParancs.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

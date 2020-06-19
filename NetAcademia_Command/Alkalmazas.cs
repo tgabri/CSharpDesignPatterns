@@ -15,7 +15,13 @@ namespace NetAcademia_Command
                 return HasznalatiUtasitas();
             }
 
-            var feldolgozo = new ParancsFeldolgozo();
+            var parancsLista = new List<IParancs>(new IParancs[]
+            {
+                new UjParancs(),
+                new ModositasParancs(),
+                new TorlesParancs()
+            });
+            var feldolgozo = new ParancsFeldolgozo(parancsLista);
 
             return feldolgozo.Vegrehajtas(args);
         }
