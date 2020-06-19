@@ -81,8 +81,10 @@ namespace NetAcademia_Command.Test
 
             Console.WriteLine(eredmeny);
 
+            var elvart = string.Format(MagicValues.CommandResponseInvalid, MagicValues.CommandTextInvalid);
+
             //Assert
-            Assert.AreEqual(MagicValues.CommandResponseInvalid, eredmeny);
+            Assert.AreEqual(elvart, eredmeny);
         }
 
         [TestMethod]
