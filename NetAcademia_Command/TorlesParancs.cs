@@ -3,7 +3,7 @@
     public class TorlesParancs : IParancs
     {
         private string parameter;
-
+        public string HasznalatiUtasitas => MagicValues.CommandTextDelete + " parameter";
         public string ParancsSzoveg => MagicValues.CommandTextDelete;
 
         public void ParameterBeallitas(string[] args)

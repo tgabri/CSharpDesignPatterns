@@ -6,6 +6,8 @@
 
         public string ParancsSzoveg => MagicValues.CommandTextModify;
 
+        public string HasznalatiUtasitas => MagicValues.CommandTextModify + " parameter";
+
         public void ParameterBeallitas(string[] args)
         {
             parameter = args[1];

@@ -8,19 +8,23 @@ namespace NetAcademia_Command
 {
     public class Alkalmazas
     {
+        public List<IParancs> parancsLista = new List<IParancs>();
+
         public string Bevitel(string[] args)
         {
-            if (args.Length == 0)
-            {
-                return HasznalatiUtasitas();
-            }
 
-            var parancsLista = new List<IParancs>(new IParancs[]
+            parancsLista = new List<IParancs>(new IParancs[]
             {
                 new UjParancs(),
                 new ModositasParancs(),
                 new TorlesParancs()
             });
+
+            if (args.Length == 0)
+            {
+                return HasznalatiUtasitas();
+            }
+
             var feldolgozo = new ParancsFeldolgozo(parancsLista);
 
             return feldolgozo.Vegrehajtas(args);
@@ -29,10 +33,11 @@ namespace NetAcademia_Command
         public string HasznalatiUtasitas()
         {
             var hu = string.Format("Hasznalat: NetAcademia_Command[.exe] parancs parameterek{0}", Environment.NewLine);
-            hu += string.Format(MagicValues.CommandTextNew + Environment.NewLine);
-            hu += string.Format(MagicValues.CommandTextModify + " parameter" + Environment.NewLine);
-            hu += string.Format(MagicValues.CommandTextDelete + " parameter");
+            foreach (var parancs in parancsLista)
+            {
+                hu += string.Format(parancs.HasznalatiUtasitas + Environment.NewLine);
 
+            }
             return hu;
         }
     }

@@ -98,7 +98,7 @@ namespace NetAcademia_Command.Test
 
             //Assert
             var sorok = eredmeny.Count(x => x == '\n'); // a karakterek kozul a sortores karakterek szama
-            Assert.AreEqual(3, sorok);
+            Assert.AreEqual(4, sorok);
 
             var hasznUtasitas = sut.HasznalatiUtasitas();
             Assert.AreEqual(hasznUtasitas, eredmeny);
