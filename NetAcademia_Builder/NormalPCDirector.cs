@@ -10,26 +10,18 @@ namespace NetAcademia_Builder
     /// A letrehozas magasabb szintu vezerloje,
     /// a builder lepeseit iranyitja
     /// </summary>
-    public class NormalPCDirector
+    public class NormalPCDirector : AbstractPCDirector
     {
-        private AbstractPCBuilder pcBuilder;
-
         public NormalPCDirector(AbstractPCBuilder pcBuilder)
-        {
-            this.pcBuilder = pcBuilder;
-        }
+            : base(pcBuilder)
+        { }
 
-        public void BuildPC()
+        public override void BuildPC()
         {
             pcBuilder.CreatePC();
             pcBuilder.BuildHardware();
             pcBuilder.InstallOS();
             pcBuilder.InstallApps();
-        }
-
-        public Computer GetPC()
-        {
-            return pcBuilder.GetPC();
         }
     }
 }
