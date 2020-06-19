@@ -2,6 +2,9 @@
 
 namespace NetAcademia_Builder
 {
+    /// <summary>
+    /// Az osszeszereles alacsonyszintu lepeseinek az osztalya
+    /// </summary>
     public abstract class AbstractPCBuilder
     {
         protected Computer computer;
@@ -9,13 +12,6 @@ namespace NetAcademia_Builder
         public void CreatePC()
         {
             computer = new Computer();
-        }
-
-        public void BuildPC()
-        {
-            BuildHardware();
-            InstallOS();
-            InstallApps();
         }
 
         public abstract void InstallApps();
