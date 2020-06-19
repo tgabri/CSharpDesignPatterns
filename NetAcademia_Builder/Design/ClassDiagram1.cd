@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetAcademia_Builder.AbstractPCBuilder">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAgAAAAAAAAAAAAEAAAABAAEACAgAAAAAA=</HashCode>
+      <FileName>AbstractPCBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="computer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetAcademia_Builder.Computer">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAABAAQAAAAAAAAQAAAAAAAAAAAAAAQAgEAAE=</HashCode>
+      <FileName>Computer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OS" />
+      <Property Name="Processor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetAcademia_Builder.PCBuilderForWindows">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>PCBuilderForWindows.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="NetAcademia_Builder.OS" Collapsed="true">
+    <Position X="11" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACBAACAAAAAAAgIAAAAAAAAAAAAAABAAAAAAAAI=</HashCode>
+      <FileName>OS.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="NetAcademia_Builder.Processor" Collapsed="true">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAUIAAAAA=</HashCode>
+      <FileName>Processor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

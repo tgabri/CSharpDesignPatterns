@@ -16,7 +16,7 @@ namespace NetAcademia_Builder
     {
         static void Main(string[] args)
         {
-            var builder = new PCBuilder();
+            var builder = new PCBuilderForWindows();
             builder.CreatePC();
             builder.BuildPC();
             var computer = builder.GetPC();
