@@ -7,6 +7,7 @@
         public AbstractPCDirector(AbstractPCBuilder pcBuilder)
         {
             this.pcBuilder = pcBuilder;
+            pcBuilder.CreatePC();
         }
 
         public abstract void BuildPC();

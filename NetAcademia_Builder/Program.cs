@@ -16,12 +16,17 @@ namespace NetAcademia_Builder
     {
         static void Main(string[] args)
         {
-            var director = new NormalPCDirector(new PCBuilderForWindows());
+            var director1 = new PCDirectorWithApps(new PCBuilderForWindows());
+            director1.BuildPC();
+            var computer1 = director1.GetPC();
 
-            director.BuildPC();
-            var computer = director.GetPC();
+            computer1.Display();
 
-            computer.Display();
+            var director2 = new PCDirectorWithoutApps(new PCBuilderForLinux());
+            director2.BuildPC();
+            var computer2 = director2.GetPC();
+
+            computer2.Display();
 
             Console.ReadLine();
         }

@@ -16,7 +16,7 @@ namespace NetAcademia_Builder
         public bool HasDVD { get; set; }
         public bool HasSoundCard { get; set; }
         public bool HasUSB { get; set; }
-        public List<string> Applications { get; set; }
+        public List<string> Applications { get; set; } = new List<string>();
 
         public void Display()
         {

@@ -35,11 +35,28 @@
       <FileName>PCBuilderForLinux.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NetAcademia_Builder.NormalPCDirector">
-    <Position X="4.75" Y="4.5" Width="1.5" />
+  <Class Name="NetAcademia_Builder.PCDirectorWithApps">
+    <Position X="2.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>NormalPCDirector.cs</FileName>
+      <FileName>PCDirectorWithApps.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetAcademia_Builder.AbstractPCDirector">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>AbstractPCDirector.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pcBuilder" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="NetAcademia_Builder.PCDirectorWithoutApps">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>PCDirectorWithoutApps.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="NetAcademia_Builder.OS" Collapsed="true">
