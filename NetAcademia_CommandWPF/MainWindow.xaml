@@ -11,7 +11,7 @@
     </Window.DataContext>
     <Grid>
         <ProgressBar Margin="10" Height="20" VerticalAlignment="Top" Value="{Binding ProgressValue}"/>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20" Padding="20" Content="Inditas" Click="Start_Click"/>
-        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Padding="20" Content="Leallitas" Click="Stop_Click"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20" Padding="20" Content="Inditas" Command="{Binding StartCommand}"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20" Padding="20" Content="Leallitas" Command="{Binding StopCommand}"/>
     </Grid>
 </Window>

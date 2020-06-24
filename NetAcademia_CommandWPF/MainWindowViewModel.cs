@@ -6,13 +6,52 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace NetAcademia_CommandWPF
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        public MainWindowViewModel()
+        {
+            startCommand = new SajatParancs((param) => Start(), (param) => !IsWorking);
+            stopCommand = new SajatParancs((param) => Stop(), (param) => IsWorking);
+
+        }
         private int progressValue = 0;
         private CancellationTokenSource cancellationTokenSource = null;
+        private Task task = null;
+        private ICommand startCommand;
+        private ICommand stopCommand;
+        public ICommand StartCommand { get => startCommand; }
+        public ICommand StopCommand { get => stopCommand; }
+        public bool IsWorking
+        {
+            get
+            {
+                if (task == null)
+                    return false;
+
+                switch (task.Status)
+                {
+                    case TaskStatus.Created:
+                    case TaskStatus.RanToCompletion:
+                    case TaskStatus.Canceled:
+                    case TaskStatus.Faulted:
+                        //nem fut a task
+                        return true;
+                    case TaskStatus.WaitingForActivation:
+                    case TaskStatus.WaitingToRun:
+                    case TaskStatus.Running:
+                    case TaskStatus.WaitingForChildrenToComplete:
+                        //fut a task
+                        return true;
+                    default:
+                        //ismeretlen a statuszunk, nincs a program erre felkeszitve
+                        throw new ArgumentOutOfRangeException(string.Format($"task.Status ismeretlen: {task.Status}"));
+                }
+            }
+        }
 
         public int ProgressValue
         {
@@ -31,11 +70,13 @@ namespace NetAcademia_CommandWPF
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+
+
         public async void Start()
         {
             cancellationTokenSource = new CancellationTokenSource();
 
-            var task = new Task(() =>
+            task = new Task(() =>
             {
                 for (int i = 0; i < 100; i++)
                 {
@@ -60,6 +101,12 @@ namespace NetAcademia_CommandWPF
             {
                 Console.WriteLine(ex.Message);
             }
+            finally
+            {
+                CommandManager.InvalidateRequerySuggested();
+            }
+
+            task = null;
         }
         public void Stop()
         {
